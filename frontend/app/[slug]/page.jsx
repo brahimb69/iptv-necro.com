@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
       keywords: `${post.title}, Necro IPTV blog, IPTV guides, streaming tips, ${post.tags?.join(', ') || 'IPTV news'}`,
       authors: [{ name: post.author?.name || "Necro IPTV Team" }],
       alternates: {
-        canonical: `https://necroiptv.us/${slug}`,
+        canonical: `https://iptv-necro.com/${slug}`,
       },
       openGraph: {
         title: `${post.title} | Necro IPTV Blog`,
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
         publishedTime: post.createdAt,
         authors: [post.author?.name || "Necro IPTV Team"],
         tags: post.tags || [],
-        url: `https://necroiptv.us/${slug}`,
+        url: `https://iptv-necro.com/${slug}`,
         siteName: "Necro IPTV",
         images: [
           {

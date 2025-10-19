@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
 
   const robotsTxt = `# Necro IPTV - Premium IPTV Service Robots.txt
 # https://www.robotstxt.org/robotstxt.html
@@ -16,7 +16,7 @@ Allow: /blog
 Allow: /refund-policy
 
 # Allow blog structure for proper indexing
-# Blog posts are now at /blog/slug path (necroiptv.us/blog/slug)
+# Blog posts are now at /blog/slug path (iptv-necro.com/blog/slug)
 Allow: /blog/*
 
 # Prioritize important pages for crawling

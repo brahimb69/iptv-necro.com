@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const WORDPRESS_API_URL = "https://necroiptv.us/wp-json/wp/v2";
+const WORDPRESS_API_URL = "https://iptv-necro.com/wp-json/wp/v2";
 
 export const ReviewsService = {
   // Get all reviews

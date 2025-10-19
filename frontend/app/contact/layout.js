@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Contact Necro IPTV | 24/7 Customer Support & Technical Assistance",
-  description: "Contact Necro IPTV's dedicated 24/7 support team for any questions about our premium IPTV service. Get help with setup, technical issues, or billing. Email: admin@necroiptv.us | Phone: +1 (873) 300-0545",
+  description: "Contact Necro IPTV's dedicated 24/7 support team for any questions about our premium IPTV service. Get help with setup, technical issues, or billing. Email: admin@iptv-necro.com | Phone: +1 (873) 300-0545",
   keywords: "Contact Necro IPTV, NecroIPTV support, IPTV customer service, technical support, IPTV help, billing support, setup assistance, 24/7 support",
   alternates: {
-    canonical: "https://necroiptv.us/contact",
+    canonical: "https://iptv-necro.com/contact",
   },
   openGraph: {
     title: "Contact Necro IPTV | 24/7 Customer Support",
     description: "Get in touch with Necro IPTV's dedicated support team for any questions or assistance with our premium IPTV service.",
-    url: "https://necroiptv.us/contact",
+    url: "https://iptv-necro.com/contact",
     siteName: "Necro IPTV",
     images: [
       {

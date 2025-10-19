@@ -5,10 +5,10 @@ const axios = require('axios');
 
 // Test different blog configurations
 const testConfigs = [
-  'https://blog.necroiptv.us/wp-json/wp/v2/posts',
-  'https://necroiptv.us/wp-json/wp/v2/posts',
-  'https://blog.necroiptv.us/',
-  'https://necroiptv.us/'
+  'https://blog.iptv-necro.com/wp-json/wp/v2/posts',
+  'https://iptv-necro.com/wp-json/wp/v2/posts',
+  'https://blog.iptv-necro.com/',
+  'https://iptv-necro.com/'
 ];
 
 async function testEndpoint(url) {
@@ -58,7 +58,7 @@ async function runTests() {
   }
   
   console.log('\n💡 Next Steps:');
-  console.log('1. If blog.necroiptv.us is not accessible, check your DNS/hosting setup');
+  console.log('1. If blog.iptv-necro.com is not accessible, check your DNS/hosting setup');
   console.log('2. If WordPress is hosted elsewhere, update the API URL in blog.service.js');
   console.log('3. If WordPress REST API is disabled, enable it in your WordPress admin');
   console.log('4. Check if CORS is properly configured for cross-domain requests');

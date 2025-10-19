@@ -4,7 +4,7 @@ const https = require('https');
 
 // Test WordPress REST API endpoints
 async function checkWordPressAPI() {
-  const baseUrl = 'https://blog.necroiptv.us';
+  const baseUrl = 'https://blog.iptv-necro.com';
   
   const endpoints = [
     '/wp-json/',                    // API discovery endpoint

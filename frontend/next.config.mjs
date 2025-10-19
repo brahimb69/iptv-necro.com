@@ -4,13 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'necroiptv.us',
+        hostname: 'iptv-necro.com',
         port: '',
         pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'blog.necroiptv.us',
+        hostname: 'blog.iptv-necro.com',
         port: '',
         pathname: '/wp-content/uploads/**',
       },

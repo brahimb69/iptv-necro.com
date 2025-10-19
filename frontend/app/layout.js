@@ -49,15 +49,15 @@ export const metadata = {
     "VOD library",
     "global IPTV provider"
   ].join(", "),
-  metadataBase: new URL('https://necroiptv.us'),
+  metadataBase: new URL('https://iptv-necro.com'),
   alternates: {
-    canonical: 'https://necroiptv.us',
+    canonical: 'https://iptv-necro.com',
   },
   openGraph: {
     title: "Necro IPTV - #1 Premium IPTV Service | 25,000+ Live Channels & 60,000+ VOD",
     description: "Experience the ultimate entertainment with Necro IPTV. Access 25,000+ live TV channels and 60,000+ movies & series in HD/4K quality. Buffer-free streaming on all devices.",
     type: "website",
-    url: "https://necroiptv.us",
+    url: "https://iptv-necro.com",
     siteName: "Necro IPTV - Premium IPTV Service",
     images: [
       {
@@ -137,14 +137,14 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "Necro IPTV",
               "alternateName": "NecroIPTV",
-              "url": "https://necroiptv.us",
-              "logo": "https://necroiptv.us/images/logo-new.webp",
+              "url": "https://iptv-necro.com",
+              "logo": "https://iptv-necro.com/images/logo-new.webp",
               "description": "Necro IPTV - Premium IPTV service provider offering 25,000+ live TV channels and 60,000+ movies & series in HD/4K quality with buffer-free streaming on all devices.",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-873-300-0545",
                 "contactType": "customer service",
-                "email": "admin@necroiptv.us",
+                "email": "admin@iptv-necro.com",
                 "availableLanguage": ["English"],
                 "areaServed": "Global"
               },
@@ -177,11 +177,11 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Necro IPTV",
-              "url": "https://necroiptv.us",
+              "url": "https://iptv-necro.com",
               "description": "Premium IPTV service with 25,000+ live channels and 60,000+ VOD content in HD/4K quality",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://necroiptv.us/channel-list?search={search_term_string}",
+                "target": "https://iptv-necro.com/channel-list?search={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })

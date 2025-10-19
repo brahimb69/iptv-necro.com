@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
 
   // Define static pages with SEO priorities and frequencies
   const staticPages = [

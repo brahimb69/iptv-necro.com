@@ -3,7 +3,7 @@ import { SitemapService } from "@/services/sitemap.service";
 
 export async function POST() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
     
     // Submit all sitemaps to search engines
     const results = await SitemapService.submitSitemapToSearchConsole(baseUrl);
@@ -24,7 +24,7 @@ export async function POST() {
 
 export async function GET() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
     
     // Validate all sitemaps
     const sitemaps = [

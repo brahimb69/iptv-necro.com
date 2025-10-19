@@ -4,7 +4,7 @@
 import { BlogService } from "@/services/blog.service";
 
 export default async function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
   
   // Static pages
   const staticPages = [

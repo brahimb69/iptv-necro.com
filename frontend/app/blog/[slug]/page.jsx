@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
       keywords: `${post.title}, Necro IPTV blog, IPTV guides, streaming tips, ${post.tags?.join(', ') || 'IPTV news'}`,
       authors: [{ name: post.author?.name || "Necro IPTV Team" }],
       alternates: {
-        canonical: `https://necroiptv.us/blog/${slug}`,
+        canonical: `https://iptv-necro.com/blog/${slug}`,
       },
       openGraph: {
         title: `${post.title} | Necro IPTV Blog`,
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
         publishedTime: post.createdAt,
         authors: [post.author?.name || "Necro IPTV Team"],
         tags: post.tags || [],
-        url: `https://necroiptv.us/blog/${slug}`,
+        url: `https://iptv-necro.com/blog/${slug}`,
         siteName: "Necro IPTV",
         images: [
           {
@@ -88,28 +88,28 @@ export default async function BlogPost({ params }) {
       "author": {
         "@type": "Person",
         "name": post.author?.name || "Necro IPTV Team",
-        "url": `https://necroiptv.us/blog`
+        "url": `https://iptv-necro.com/blog`
       },
       "publisher": {
         "@type": "Organization",
         "name": "Necro IPTV",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://necroiptv.us/images/logo-new.webp",
+          "url": "https://iptv-necro.com/images/logo-new.webp",
           "width": "200",
           "height": "60"
         },
-        "url": "https://necroiptv.us"
+        "url": "https://iptv-necro.com"
       },
       "datePublished": post.createdAt,
       "dateModified": post.updatedAt || post.createdAt,
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": `https://necroiptv.us/blog/${slug}`
+        "@id": `https://iptv-necro.com/blog/${slug}`
       },
       "image": {
         "@type": "ImageObject",
-        "url": post.featuredImage || "https://necroiptv.us/images/necro-iptv-blog-default.jpg",
+        "url": post.featuredImage || "https://iptv-necro.com/images/necro-iptv-blog-default.jpg",
         "width": "1200",
         "height": "630"
       },
@@ -119,7 +119,7 @@ export default async function BlogPost({ params }) {
       "isPartOf": {
         "@type": "Blog",
         "name": "Necro IPTV Blog",
-        "url": "https://necroiptv.us/blog"
+        "url": "https://iptv-necro.com/blog"
       }
     };
 

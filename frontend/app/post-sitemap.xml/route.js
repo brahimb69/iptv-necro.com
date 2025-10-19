@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const baseUrl =
-      process.env.NEXT_PUBLIC_SITE_URL || "https://necroiptv.us";
+      process.env.NEXT_PUBLIC_SITE_URL || "https://iptv-necro.com";
     const response = await BlogService.getBlogsForSitemap();
     const posts = response.success ? response.data : [];
 

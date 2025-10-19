@@ -4,7 +4,7 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const WORDPRESS_API_URL = "https://blog.necroiptv.us/wp-json/wp/v2";
+const WORDPRESS_API_URL = "https://blog.iptv-necro.com/wp-json/wp/v2";
 
 // Helper function to get featured images for multiple posts efficiently
 async function getFeaturedImagesForPosts(posts) {

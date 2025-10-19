@@ -80,7 +80,7 @@ export default function Footer() {
                   <p className="font-medium text-foreground/80 dark:text-foreground-dark/80">
                     Email:
                   </p>
-                  <a href="mailto:admin@necroiptv.us">admin@necroiptv.us</a>
+                  <a href="mailto:admin@iptv-necro.com">admin@iptv-necro.com</a>
                 </div>
                 <div className="text-sm text-muted-foreground dark:text-foreground-dark/70 space-y-1">
                   <p className="font-medium text-foreground/80 dark:text-foreground-dark/80">

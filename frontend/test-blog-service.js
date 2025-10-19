@@ -5,7 +5,7 @@ async function testBlogServiceDirect() {
   try {
     console.log('Testing blog service API call...');
     
-    const WORDPRESS_API_URL = "https://blog.necroiptv.us/wp-json/wp/v2";
+    const WORDPRESS_API_URL = "https://blog.iptv-necro.com/wp-json/wp/v2";
     const url = `${WORDPRESS_API_URL}/posts?_embed=true&per_page=5`;
     
     console.log('Making request to:', url);

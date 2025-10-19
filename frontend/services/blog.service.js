@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Updated WordPress API URL to point to your blog domain
-const WORDPRESS_API_URL = "https://blog.necroiptv.us/wp-json/wp/v2";
+const WORDPRESS_API_URL = "https://blog.iptv-necro.com/wp-json/wp/v2";
 
 // Helper function to fix malformed JSON from WordPress API
 function fixMalformedJson(jsonString) {

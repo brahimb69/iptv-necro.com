@@ -71,8 +71,8 @@ export default function Contact() {
                     <h3 className="font-medium text-foreground dark:text-foreground-dark mb-1">
                       Email
                     </h3>
-                    <a href="mailto:admin@necroiptv.us" className="text-muted-foreground dark:text-foreground-dark/70">
-                      admin@necroiptv.us
+                    <a href="mailto:admin@iptv-necro.com" className="text-muted-foreground dark:text-foreground-dark/70">
+                      admin@iptv-necro.com
                     </a>
                   </div>
                 </div>

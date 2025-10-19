@@ -3,12 +3,12 @@ export const metadata = {
   description: "Necro IPTV multi-device plans allow you to stream on 1-5 devices simultaneously. Enjoy 25,000+ channels and 60,000+ VOD content on Firestick, Android, iOS, Smart TVs. Flexible pricing starting at $10.99.",
   keywords: "Necro IPTV multi-device, IPTV multiple screens, simultaneous streaming, Firestick IPTV, Android IPTV, iOS IPTV, Smart TV IPTV, family IPTV plan, NecroIPTV devices",
   alternates: {
-    canonical: "https://necroiptv.us/multi-device",
+    canonical: "https://iptv-necro.com/multi-device",
   },
   openGraph: {
     title: "Necro IPTV Multi-Device Plans | Stream on Multiple Devices",
     description: "Stream Necro IPTV on multiple devices simultaneously. Perfect for families and households with multiple viewers.",
-    url: "https://necroiptv.us/multi-device",
+    url: "https://iptv-necro.com/multi-device",
     siteName: "Necro IPTV",
     images: [
       {

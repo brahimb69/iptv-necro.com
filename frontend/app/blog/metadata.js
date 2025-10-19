@@ -25,7 +25,7 @@ export const metadata = {
     title: "Necro IPTV Blog | Expert IPTV Guides & Streaming Tips",
     description:
       "Discover expert IPTV guides, setup tutorials, and streaming insights from the Necro IPTV team. Your ultimate resource for premium IPTV knowledge and tips.",
-    url: "https://necroiptv.us/blog",
+    url: "https://iptv-necro.com/blog",
     siteName: "Necro IPTV",
     images: [
       {
@@ -58,6 +58,6 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: "https://necroiptv.us/blog",
+    canonical: "https://iptv-necro.com/blog",
   },
 };

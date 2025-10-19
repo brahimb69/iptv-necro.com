@@ -6,12 +6,12 @@ export const metadata = {
   description: "Explore Necro IPTV pricing plans. Get premium IPTV access with 25k+ channels & 60k+ VOD from $10.99/month. Choose the best affordable subscription for you.",
   keywords: "Necro IPTV pricing, IPTV subscription, IPTV plans, affordable IPTV, premium IPTV service, NecroIPTV cost, monthly IPTV, yearly IPTV, cheap IPTV",
   alternates: {
-    canonical: "https://necroiptv.us/pricing", // Assuming .us domain
+    canonical: "https://iptv-necro.com/pricing", // Assuming .us domain
   },
   openGraph: {
     title: "Necro IPTV Pricing | Affordable Premium Plans",
     description: "Get premium IPTV access with 25k+ channels & 60k+ VOD from $10.99/month.",
-    url: "https://necroiptv.us/pricing", // Assuming .us domain
+    url: "https://iptv-necro.com/pricing", // Assuming .us domain
     siteName: "Necro IPTV",
     images: [
       {

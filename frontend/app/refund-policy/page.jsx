@@ -32,7 +32,7 @@ const policies = [
     icon: FiHelpCircle,
     title: "How to Request a Refund",
     content:
-      "To request a Necro IPTV refund, contact our 24/7 support team through the contact form or email at admin@necroiptv.us with your order details and reason for the refund request.",
+      "To request a Necro IPTV refund, contact our 24/7 support team through the contact form or email at admin@iptv-necro.com with your order details and reason for the refund request.",
   },
 ];
 

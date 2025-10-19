@@ -13,8 +13,8 @@ This is a frontend-only Next.js application for the Necro IPTV website.
 
 The frontend connects to external WordPress APIs for content:
 
-- **Reviews**: `https://necroiptv.us/wp-json/wp/v2` (with fallback to default reviews)
-- **Blog**: `https://blog.necroiptv.us/wp-json/wp/v2` (with fallback to default blog posts)
+- **Reviews**: `https://iptv-necro.com/wp-json/wp/v2` (with fallback to default reviews)
+- **Blog**: `https://blog.iptv-necro.com/wp-json/wp/v2` (with fallback to default blog posts)
 
 ## Development
 

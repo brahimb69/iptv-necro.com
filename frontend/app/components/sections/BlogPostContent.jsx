@@ -35,7 +35,7 @@ export default function BlogPostContent({ post }) {
     );
   }
 
-  const shareUrl = `https://necroiptv.us/blog/${post.slug}`;
+  const shareUrl = `https://iptv-necro.com/blog/${post.slug}`;
   const shareText = `Check out this article: ${post.title}`;
 
   const shareLinks = [
