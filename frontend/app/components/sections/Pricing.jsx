@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaCheck, FaCrown, FaInfinity, FaStar } from "react-icons/fa";
+import { FaCheck, FaCrown, FaInfinity, FaStar, FaMobileAlt, FaTv, FaTabletAlt, FaLaptop, FaDesktop } from "react-icons/fa";
 
 const pricingPlans = [
   {
@@ -66,30 +66,35 @@ const lifetimePlans = [
     price: "289",
     paymentLink: "https://t.growth4ch.shop/",
     popular: true,
+    icon: FaMobileAlt,
   },
   {
     devices: "2 Devices",
     price: "416",
     paymentLink: "https://wa.link/tt8c55",
     popular: false,
+    icon: FaTabletAlt,
   },
   {
     devices: "3 Devices",
     price: "543",
     paymentLink: "https://wa.link/tt8c55",
     popular: false,
+    icon: FaLaptop,
   },
   {
     devices: "4 Devices",
     price: "670",
     paymentLink: "https://wa.link/tt8c55",
     popular: false,
+    icon: FaTv,
   },
   {
     devices: "5 Devices",
     price: "797",
     paymentLink: "https://wa.link/tt8c55",
     popular: false,
+    icon: FaDesktop,
   },
 ];
 
@@ -264,60 +269,90 @@ const Pricing = () => {
                     <FaStar className="w-5 h-5" />
                   </span>
                 </h3>
-                <p className="text-muted-foreground dark:text-gray-400 max-w-2xl mx-auto">
-                  Choose your perfect lifetime plan based on your device needs. One-time payment for endless entertainment.
+                <p className="text-muted-foreground dark:text-gray-400 max-w-2xl mx-auto mb-6">
+                  One-time payment for endless entertainment. Pay once, watch forever!
                 </p>
+                
+                {/* Device Selection Instruction - PROMINENT */}
+                <div className="inline-block bg-gradient-to-r from-blue-500/20 to-primary/20 dark:from-blue-400/20 dark:to-primary-hover/20 border-2 border-primary/30 dark:border-primary-hover/30 rounded-2xl px-8 py-4 mb-8 shadow-lg">
+                  <p className="text-lg md:text-xl font-bold text-foreground dark:text-white mb-2 flex items-center gap-3 justify-center">
+                    <FaMobileAlt className="w-6 h-6 text-primary dark:text-primary-hover animate-pulse" />
+                    Choose Based on Number of Devices
+                    <FaMobileAlt className="w-6 h-6 text-primary dark:text-primary-hover animate-pulse" />
+                  </p>
+                  <p className="text-sm text-muted-foreground dark:text-gray-300">
+                    Select the plan that matches how many devices you want to use simultaneously
+                  </p>
+                </div>
               </div>
 
               {/* Lifetime Plans Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
-                {lifetimePlans.map((plan, index) => (
-                  <motion.div
-                    key={plan.devices}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index }}
-                    className={`relative group rounded-2xl bg-background/50 dark:bg-gray-800/50 backdrop-blur-sm border border-border dark:border-gray-800/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 ${
-                      plan.popular
-                        ? "ring-2 ring-primary dark:ring-primary-hover scale-105"
-                        : ""
-                    }`}
-                  >
-                    {/* Popular Badge */}
-                    {plan.popular && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary dark:bg-primary-hover text-white text-sm rounded-full flex items-center gap-2 whitespace-nowrap">
-                        <FaCrown className="w-3 h-3" />
-                        <span>Best Value</span>
+                {lifetimePlans.map((plan, index) => {
+                  const DeviceIcon = plan.icon;
+                  return (
+                    <motion.div
+                      key={plan.devices}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 * index }}
+                      className={`relative group rounded-2xl bg-background/50 dark:bg-gray-800/50 backdrop-blur-sm border-2 border-border dark:border-gray-800/50 p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:border-primary/50 dark:hover:border-primary-hover/50 ${
+                        plan.popular
+                          ? "ring-2 ring-primary dark:ring-primary-hover scale-105 border-primary/50 dark:border-primary-hover/50"
+                          : ""
+                      }`}
+                    >
+                      {/* Popular Badge */}
+                      {plan.popular && (
+                        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary dark:bg-primary-hover text-white text-sm rounded-full flex items-center gap-2 whitespace-nowrap shadow-lg">
+                          <FaCrown className="w-3 h-3" />
+                          <span>Best Value</span>
+                        </div>
+                      )}
+
+                      {/* Device Icon - PROMINENT */}
+                      <div className="flex justify-center mb-4">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-blue-500/20 dark:from-primary-hover/20 dark:to-blue-400/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <DeviceIcon className="w-8 h-8 text-primary dark:text-primary-hover" />
+                        </div>
                       </div>
-                    )}
 
-                    {/* Device Count */}
-                    <div className="text-lg font-semibold text-foreground dark:text-white mb-2 text-center">
-                      {plan.devices}
-                    </div>
+                      {/* Device Count - BIGGER & BOLDER */}
+                      <div className="text-xl font-bold text-foreground dark:text-white mb-1 text-center">
+                        {plan.devices}
+                      </div>
+                      
+                      <div className="text-xs text-muted-foreground dark:text-gray-400 mb-4 text-center">
+                        Use on {plan.devices.split(' ')[0]} device{plan.devices.split(' ')[0] !== '1' ? 's' : ''} at once
+                      </div>
 
-                    {/* Price */}
-                    <div className="flex items-baseline justify-center mb-6">
-                      <span className="text-2xl font-bold text-primary dark:text-primary-hover">
-                        $
-                      </span>
-                      <span className="text-4xl font-bold text-foreground dark:text-white mx-1">
-                        {plan.price}
-                      </span>
-                      <span className="text-muted-foreground dark:text-gray-400 text-sm">
-                        .00
-                      </span>
-                    </div>
+                      {/* Price */}
+                      <div className="flex items-baseline justify-center mb-6 bg-primary/5 dark:bg-primary-hover/5 rounded-xl py-4">
+                        <span className="text-2xl font-bold text-primary dark:text-primary-hover">
+                          $
+                        </span>
+                        <span className="text-4xl font-bold text-foreground dark:text-white mx-1">
+                          {plan.price}
+                        </span>
+                        <span className="text-muted-foreground dark:text-gray-400 text-sm">
+                          .00
+                        </span>
+                      </div>
 
-                    {/* CTA Button */}
-                    <Link href={plan.paymentLink}>
-                      <button className="w-full py-3 px-4 rounded-xl text-white dark:text-primary bg-[#004275] dark:bg-white hover:bg-[#004275] font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                        GET LIFETIME
-                      </button>
-                    </Link>
-                  </motion.div>
-                ))}
+                      <div className="text-center text-xs text-green-600 dark:text-green-400 font-semibold mb-4">
+                        ✓ One-Time Payment
+                      </div>
+
+                      {/* CTA Button */}
+                      <Link href={plan.paymentLink}>
+                        <button className="w-full py-3 px-4 rounded-xl text-white dark:text-primary bg-[#004275] dark:bg-white hover:bg-[#003366] dark:hover:bg-gray-100 font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                          GET LIFETIME
+                        </button>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
 
               {/* Features Grid */}
