@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { FaCheck, FaCrown, FaDesktop, FaInfinity, FaStar, FaMobileAlt } from "react-icons/fa";
+import { FaCheck, FaCrown, FaInfinity, FaStar } from "react-icons/fa";
 
 const multiDevicePlans = {
   1: [
@@ -212,19 +212,6 @@ const lifetimePlans = [
 const Pricing = () => {
   const [activeDeviceCount, setActiveDeviceCount] = useState(1);
 
-  const getDeviceIcons = (count, isActive) => {
-    const icons = [];
-    for (let i = 0; i < count; i++) {
-      icons.push(
-        <FaDesktop 
-          key={i} 
-          className={`w-5 h-5 ${isActive ? 'text-white' : (i === 0 ? 'text-primary dark:text-gray-300' : 'text-primary/70 dark:text-gray-400')}`} 
-        />
-      );
-    }
-    return icons;
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -288,50 +275,52 @@ const Pricing = () => {
             plans. All plans include full access to our premium features.
           </motion.p>
 
-          {/* PROMINENT DEVICE SELECTION INSTRUCTION */}
+          {/* DEVICE SELECTION INSTRUCTION */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="inline-block bg-gradient-to-r from-blue-100 to-primary/10 dark:from-blue-400/20 dark:to-primary-hover/20 border-2 border-primary/50 dark:border-primary-hover/40 rounded-2xl px-8 py-5 mb-8 shadow-xl"
+            className="text-center mb-8"
           >
-            <p className="text-lg md:text-xl font-bold text-gray-800 dark:text-white mb-2 flex items-center gap-3 justify-center">
-              <FaMobileAlt className="w-7 h-7 text-primary dark:text-primary-hover animate-bounce" />
-              👇 Select Number of Devices Below 👇
-              <FaMobileAlt className="w-7 h-7 text-primary dark:text-primary-hover animate-bounce" />
-            </p>
-            <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
-              Click on the device tabs to see pricing for 1-5 simultaneous devices
+            <p className="text-base text-muted-foreground dark:text-gray-400">
+              Select the number of simultaneous devices you need
             </p>
           </motion.div>
         </div>
 
-        {/* PROMINENT DEVICE COUNT TABS */}
+        {/* PROFESSIONAL DEVICE TABS */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <div className="flex flex-wrap justify-center gap-4 p-4 bg-white/80 dark:bg-gray-800/30 rounded-2xl border-2 border-primary/30 dark:border-primary-hover/20 shadow-lg">
-            {[1, 2, 3, 4, 5].map((deviceCount) => (
-              <button
-                key={deviceCount}
-                onClick={() => setActiveDeviceCount(deviceCount)}
-                className={`flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 ${
-                  activeDeviceCount === deviceCount
-                    ? "bg-gradient-to-r from-primary to-blue-500 dark:from-primary-hover dark:to-blue-400 text-white shadow-xl scale-105 ring-2 ring-primary/30 dark:ring-white/50"
-                    : "bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-gray-600 border-2 border-gray-200 dark:border-gray-600 shadow-sm"
-                }`}
-              >
-                <div className="flex items-center gap-1">
-                  {getDeviceIcons(deviceCount, activeDeviceCount === deviceCount)}
-                </div>
-                <span className="whitespace-nowrap">{deviceCount} Device{deviceCount > 1 ? 's' : ''}</span>
-              </button>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3 p-2 bg-muted/30 dark:bg-gray-800/50 rounded-xl backdrop-blur-sm border border-border dark:border-gray-700/50">
+              {[1, 2, 3, 4, 5].map((deviceCount) => (
+                <button
+                  key={deviceCount}
+                  onClick={() => setActiveDeviceCount(deviceCount)}
+                  className={`relative px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                    activeDeviceCount === deviceCount
+                      ? "bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 text-white shadow-lg shadow-blue-500/30"
+                      : "bg-transparent text-foreground dark:text-gray-300 hover:bg-muted/50 dark:hover:bg-gray-700/50"
+                  }`}
+                >
+                  <span className="relative z-10">{deviceCount} {deviceCount === 1 ? 'Device' : 'Devices'}</span>
+                  {activeDeviceCount === deviceCount && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 rounded-lg"
+                      style={{ zIndex: 0 }}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -347,69 +336,79 @@ const Pricing = () => {
             <motion.div
               key={plan.duration}
               variants={itemVariants}
-              className={`relative group rounded-2xl bg-background/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-background-hover/50 dark:hover:bg-gray-800/70 border border-border dark:border-gray-800/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 ${
+              className={`relative flex flex-col rounded-xl bg-white dark:bg-gray-800/80 backdrop-blur-sm border transition-all duration-300 hover:shadow-2xl ${
                 plan.popular
-                  ? "ring-2 ring-primary dark:ring-primary-hover scale-105"
-                  : ""
+                  ? "border-blue-600 dark:border-blue-500 shadow-xl shadow-blue-500/20 scale-105"
+                  : "border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600"
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary dark:bg-primary-hover text-white text-sm rounded-full flex items-center gap-2 whitespace-nowrap">
-                  <FaCrown className="w-3 h-3" />
-                  <span>Most Popular</span>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 text-white text-xs font-bold rounded-full shadow-lg">
+                  MOST POPULAR
                 </div>
               )}
 
               {/* Save Badge */}
               {plan.saveText && (
-                <div className="absolute -right-2 -top-2 bg-green-500/90 text-white text-xs px-2 py-1 rounded-lg transform rotate-12">
+                <div className="absolute -right-3 top-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                   {plan.saveText}
                 </div>
               )}
 
-              {/* Plan Duration */}
-              <div className="text-lg font-semibold text-foreground dark:text-white mb-2 text-center">
-                {plan.duration} Access
+              <div className="p-8">
+                {/* Plan Duration */}
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+                    {plan.duration}
+                  </h3>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400">
+                    Subscription Plan
+                  </p>
+                </div>
+
+                {/* Price */}
+                <div className="text-center mb-8">
+                  <div className="flex items-baseline justify-center">
+                    <span className="text-2xl font-bold text-foreground dark:text-white">$</span>
+                    <span className="text-5xl font-bold text-foreground dark:text-white mx-1">
+                      {plan.price}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2">
+                    One-time payment
+                  </p>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gray-200 dark:bg-gray-700 w-full mb-6" />
+
+                {/* Features List */}
+                <ul className="space-y-3 mb-8">
+                  {features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start text-sm text-foreground dark:text-gray-300"
+                    >
+                      <div className="w-5 h-5 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                        <FaCheck className="w-3 h-3 text-green-600 dark:text-green-400" />
+                      </div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <Link href={plan.paymentLink} className="block">
+                  <button className={`w-full py-4 px-6 rounded-lg font-bold transition-all duration-300 ${
+                    plan.popular
+                      ? "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
+                      : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  }`}>
+                    Get Started
+                  </button>
+                </Link>
               </div>
-
-              {/* Price */}
-              <div className="flex items-baseline justify-center mb-6">
-                <span className="text-2xl font-bold text-primary dark:text-primary-hover">
-                  $
-                </span>
-                <span className="text-5xl font-bold text-foreground dark:text-white mx-1">
-                  {plan.price}
-                </span>
-                <span className="text-muted-foreground dark:text-gray-400 text-sm">
-                  /plan
-                </span>
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-border dark:bg-gray-800/50 w-full my-6" />
-
-              {/* Features List */}
-              <ul className="space-y-4 mb-8">
-                {features.map((feature, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center text-sm text-muted-foreground dark:text-gray-400 group-hover:text-foreground dark:group-hover:text-gray-300 transition-colors duration-300"
-                  >
-                    <div className="w-5 h-5 rounded-full bg-primary/10 dark:bg-primary-hover/10 flex items-center justify-center mr-3 group-hover:bg-primary/20 dark:group-hover:bg-primary-hover/20 transition-colors duration-300">
-                      <FaCheck className="w-3 h-3 text-primary dark:text-primary-hover" />
-                    </div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <Link href={plan.paymentLink}>
-                <button className="w-full py-4 px-6 rounded-xl text-white dark:text-primary bg-[#004275] dark:bg-white hover:bg-[#003366] dark:hover:bg-gray-100 font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                  BUY NOW
-                </button>
-              </Link>
             </motion.div>
           ))}
         </motion.div>

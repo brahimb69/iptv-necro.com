@@ -12,6 +12,7 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 const navigationLinks = [
   { href: "/", label: "Home" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/iptvlifetime", label: "Lifetime Plans", isNew: true },
   { href: "/channel-list", label: "Channel List" },
   { href: "/multi-device", label: "Multi Device" },
 ];
@@ -74,6 +75,7 @@ export default function Navbar() {
                 variants={linkVariants}
                 initial="hidden"
                 animate="visible"
+                className="relative"
               >
                 <Link
                   href={link.href}
@@ -81,6 +83,11 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
+                {link.isNew && (
+                  <span className="absolute -top-2 -right-8 bg-gradient-to-r from-primary to-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold animate-pulse">
+                    NEW
+                  </span>
+                )}
               </motion.div>
             ))}
 
@@ -193,13 +200,21 @@ export default function Navbar() {
                         hidden: { opacity: 0, x: -20 },
                         visible: { opacity: 1, x: 0 },
                       }}
+                      className="relative"
                     >
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="block px-4 py-2 rounded-lg font-medium text-foreground dark:text-foreground-dark hover:bg-muted dark:hover:bg-muted-dark hover:text-primary dark:hover:text-primary transition-colors"
                       >
-                        {link.label}
+                        <span className="flex items-center gap-2">
+                          {link.label}
+                          {link.isNew && (
+                            <span className="bg-gradient-to-r from-primary to-blue-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold animate-pulse">
+                              NEW
+                            </span>
+                          )}
+                        </span>
                       </Link>
                     </motion.div>
                   ))}
